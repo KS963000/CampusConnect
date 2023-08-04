@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Doubts</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/doubts.css">
+  <script src="js/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script>
+    function fetchActiveUser() {
+      var active = localStorage.getItem("activeUser");
+      // alert(active);
+      document.getElementById("txtemail").innerHTML = active;
+    }
+
+    function getCat() {
+      var cat = document.getElementById("comboSel").value;
+
+      document.getElementById("txtsum").innerHTML = cat;
+    }
+
+    function getDes() {
+      var des = document.getElementById("txtdoubt").value;
+      document.getElementById("des").innerHTML = des;
+    }
+    function showCmnt() {
+      document.getElementById("cmnt").style.display = "block";
+    }
+    function showAns() {
+      document.getElementById("ans").style.display = "block";
+    }
+  </script>
+
+  <script>
+    var module = angular.module("myModule", []);
+    module.controller("myController", function ($scope, $http) {
+      $scope.category;
+      $scope.jsonUsersAry;
+      $scope.fetchAndShow = function () {
+        $http.get("/fetch-all-doubts").then(fxOk, fxNotOk);
+        function fxOk(response) {
+          // alert(JSON.stringify(response.data));
+          $scope.jsonUsersAry = response.data;
+        }
+
+        function fxNotOk(response) {
+          alert(response.data);
+        }
+      }
+
+      $scope.fetchcategory = function () {
+        $http.get("/fetch-category").then(fxok, fxnotok);
+        function fxok(response) {
+          $scope.category = response.data;
+        }
+        function fxnotok(response) {
+          alert(response.data);
+        }
+      }
+    })
+  </script>
+</head>
+
+<body ng-app="myModule" ng-controller="myController">
+  <div id="cardcont">
+    <div class="container title-text">
+      <div class="row g-3">
+        <div class="col-md-12 d-flex justify-content-center">
+          <span class="" id="cardcont-text">
+            <h2>Ask your doubts</h2>
+          </span>
+        </div>
+        <div class="container mt-5">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <select class="form-select" aria-label="Default select example" id="comboSel">
+                <option selected>Select Category</option>
+                <option value="DSA">DSA</option>
+                <option value="C++">C++</option>
+                <option value="Web">Web</option>
+                <option value="Android">Android</option>
+
+              </select>
+            </div>
+            <div class="col-md-8 mt-5">
+              <input type="text" class="form-control" placeholder="Your Doubt" id="txtdoubt">
+            </div>
+            <div class="col-md-3 mt-5">
+              <button type="button" class="btn btn-secondary"
+                onclick="getCat();fetchActiveUser();getDes();showCmnt();">Post</button>
+            </div>
+
+
+            <div class="col-md-12">
+              <div class="ui comments">
+                <div class="comment comment-ques" id="cmnt">
+                  <div class="content">
+                    <div class="d-flex">
+                      <span id="txtemail">kunal@gmail.com</span>
+                    </div>
+                    <div class="text">
+                      <details>
+                        <summary id="txtsum">
+
+
+                        </summary>
+                        <p id="des">
+                        </p>
+                        <button type="button" class="ans-btn btn btn-secondary" onclick="showAns
+                        ();">Answer</button>
+                      </details>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="col-md-12">
+              <div class="ui comments">
+                <div class="comment comment-ans" id="ans">
+                  <div class="content">
+                    <div class="d-flex">
+                      <span id="ansemail">kunal@gmail.com</span>
+                    </div>
+                    <div>
+                      <p style="color: #fff;">
+                        .parent{
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                        }
+                      </p>
+                    </div>
+                    <div class="text">
+                     <p id="txtans">
+
+                     </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>

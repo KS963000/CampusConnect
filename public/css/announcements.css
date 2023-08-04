@@ -1,0 +1,55 @@
+body{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+	background: linear-gradient(to bottom, #000, #38383d, #444444);
+	color: #fff;
+}
+
+#cardcont-text{
+    color:#fff; 
+    font-weight: bold;
+}
+
+body a{
+	text-decoration: none;
+	color: #ffc107;
+	font-size: 17px;
+}
+.date{
+	color: grey;
+	font-size: 10px;
+}
+.metadata{
+	margin-top:10px;
+	margin-left:10px;
+}
+.comment .content .d-flex img{
+	margin-right:10px;
+}
+.comment{
+	padding-left: 15px;
+	padding-top: 5px;
+	border: 1px solid grey;
+	margin-bottom: 0.9rem;;
+}
+.author{
+	margin-top: 5px;
+}
+.text{
+	margin-top: 5px;
+}
+.comment:hover{
+	box-shadow: 0px 0px 5px 5px solid grey;
+}
+#notify-img{
+	margin-left: 20px;
+	margin-top:-4px;
+}
+#notify-img:hover{
+	scale:1.1;
+}

@@ -1,0 +1,28 @@
+body{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+	min-height: 100vh;
+	font-family: 'Jost', sans-serif;
+	background: linear-gradient(to bottom, #000, #38383d, #444444);
+}
+
+#cardcont-text{
+    color:#fff; 
+    font-weight: bold;
+}
+
+.card{
+    /* background: #4a4848; */
+    background: linear-gradient(to bottom, #1c1c1c, #363639, #807e7e);
+    display: flex;
+}
+.card span{
+    color:#fff;
+}
+.card img{
+    aspect-ratio: 3/2;;
+    object-fit: contain;   
+}

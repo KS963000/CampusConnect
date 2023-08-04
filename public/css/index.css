@@ -1,0 +1,323 @@
+*{
+    font-family: 'Baloo Bhai 2', cursive;
+}
+#nav-div{
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(../assets/bg-img-3.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.tlogo{
+    margin-right: 0px;
+}
+#title-text{
+    color: white;
+    font-size: 32px;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+#title-text:hover{
+    color:#ffc107;
+}
+.navbar{
+    /* position: fixed; */
+    backdrop-filter: blur(100%);
+    z-index:1;
+}
+.navbar ul li a{
+    color: white;
+    font-size: 19px;
+}
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    margin: 0 6px;
+}
+.navbar ul li::after{
+    content: '';
+    height:3px;
+    width: 0;
+    background: #ffc107;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    transition: 0.5s;
+}
+.navbar ul li:hover::after{
+    width:100%;
+    color: white;
+}
+.nav-link:hover{
+    color: white;
+    cursor: pointer;
+}
+.navbar-toggler .navbar-toggler-icon {
+    display: block;
+    width: 15px;
+    height: 20px;
+    border-radius: 2px;
+}
+.content{
+    width:100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color:white;
+}
+.content h1{
+    font-size: 70px;
+    margin-top: 80px
+}
+.content p{
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
+
+.getSbtn {
+  align-items: center;
+  background-color: #ffc107;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #111;
+  cursor: pointer;
+  display: flex;
+  font-size: 16px;
+  height: 48px;
+  justify-content: center;
+  line-height: 24px;
+  max-width: 15rem;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  font-weight: bold;
+}
+
+.getSbtn:after {
+  background-color: #fff;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+  font-weight: bold;
+}
+
+.getSbtn:hover:after {
+  transform: translate(0, 0);
+}
+
+.getSbtn:active {
+  background-color: white;
+  outline: 0;
+}
+
+.getSbtn:hover {
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  .getSbtn {
+    padding: 0 40px;
+  }
+}
+#team-logo{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    /* filter: invert(100%); */
+}
+
+#team{
+    color: #444444;
+    background-color:#212529; 
+    z-index:5
+}
+
+#team a{
+    color: #ffff;
+    text-decoration: none;
+}
+#team a:hover{
+    color: #ffff;
+}
+
+.team .member{
+    overflow: hidden;
+    border-radius: 5px;
+    background: #ffff;
+}
+
+.team .member .member-img{
+    position: relative;
+    overflow: hidden;
+    /* width:1200px; */
+}
+
+.team .member .social{
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+    right: 0;
+    opacity: 0;
+    transition: ease-in-out 0.3s;
+    text-align: center;
+}
+
+.team .member:hover .social{
+    opacity: 1;
+    bottom: 15px;
+
+}
+
+.team .member .social a{
+    transition: color 0.3s;
+    color: #111111;
+    margin: 0 3px;
+    padding-top: 7px;
+    border-radius: 50px;
+    width: 36px;
+    height: 36px;
+    background: #ffc107;
+    transition: ease-in-out 0.3s;
+    display: inline-block;
+    color: #ffff;
+
+}
+
+.team .member .social a:hover{
+    background: #111111;
+}
+
+.team .member .social i{
+    font-size: 18px;
+}
+
+.team .member .member-info{
+    padding: 25px 15px; 
+}
+
+.team .member .member-info h4{
+    font-weight: 700;
+    /* margin-bottom: 5px; */
+    font-size: 18px;
+    color: #111111;
+}
+
+.team .member .member-info span{
+     display: block;
+     font-size: 13px;
+     font-weight: 400;
+     color: #aaaaaa;
+}
+
+.team .member .member-img img{
+    height: 300px;
+}
+
+#dev-div{
+    background-color: #212529;
+}
+
+#sec-title{
+    color:#ffff;
+    z-index: 1;
+
+}
+
+section{
+    padding: 45px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.section-title{
+    text-align: center;
+    padding-bottom: 30px;
+    position: relative;
+    color: #ffc107;
+}
+
+.section-title h2{
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    position: relative; 
+}
+
+.section-title p{
+    color: #ffff;
+}
+.section-title h2::after{
+    content:"";
+    position: absolute;
+    display: block;
+    width: 170px;
+    height: 3px;
+    background: #ffff;
+    bottom: 0;
+    left: calc(45% - 27px);
+}
+
+.sec-title h2{
+    margin-bottom:0;
+    color: #fff;
+    position: relative;
+    text-align: center;
+    padding-top: 40px;
+}
+.sec-title p{
+    margin-top: 25px;
+    margin-bottom: 40px;
+    color: #ffff;
+    /* position: relative; */
+}
+.signin_modal .nav-tabs .nav-link{
+    background-color: #e5e5e5;
+    border-radius: 0;
+    font-weight: 600;
+    border-color:#fff;
+}
+.signin_modal .nav-tabs .nav-item{
+    width: 50%;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.signin_modal .nav-tabs {
+    border-bottom: none;
+}
+.signin_modal .nav-tabs .nav-link.active {
+    background-color: #ffff;
+}
+.signin_tab{
+    padding: 0 3rem;
+}
+.signin_tab input.form-control{
+    font-size:12px;
+    color:#8c8c8c;
+    height: 40px;
+}
+.signin_link{
+    text-align: center;
+    color:#8c8c8c;
+    margin-top: 0.5rem;
+}
+
